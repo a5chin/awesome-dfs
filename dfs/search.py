@@ -15,7 +15,7 @@ class DFS:
 
             if not current_node.seen:
                 current_node.seen = True
-                self.path.append(current_node)
+                self.path.append(current_node.idx)
 
                 if current_node == goal_node:
                     break
@@ -25,4 +25,4 @@ class DFS:
                         stack.append(node)
 
     def get_path(self) -> List:
-        return [node.idx for node in self.path]
+        return [node for node in self.path]

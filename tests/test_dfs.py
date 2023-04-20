@@ -29,22 +29,19 @@ def test_1():
     dfs = DFS()
     dfs.search(zero, one)
     path = dfs.get_path()
-    print(path)
 
-    assert len(path) != 0
+    assert path[-1] == 1
 
 def test_2():
     dfs = DFS()
     dfs.search(five, nine)
     path = dfs.get_path()
-    print(path)
 
-    assert len(path) != 0
+    assert path[-1] == 9
 
 def test_3():
     dfs = DFS()
     dfs.search(one, three)
     path = dfs.get_path()
-    print(path)
 
-    assert len(path) == 0
+    assert path != 3
