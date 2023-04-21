@@ -17,19 +17,17 @@ class DFS:
                 current_node.seen = True
 
                 if current_node == goal_node:
-                    self.path = [current_node.idx]
-
-                    while current_node.parent:
-                        self.path.append(current_node.parent.idx)
-                        current_node = current_node.parent
-
-                    self.path.reverse()
+                    self._find_path(current_node)
                     break
 
                 for node in current_node.adjs:
                     if not node.seen:
-                        node.parent = current_node
+                        node.prev = current_node
                         stack.append(node)
 
-    def get_path(self) -> List:
-        return [node for node in self.path]
+    def _find_path(self, goal_node: Node) -> None:
+        self.path = []
+        while goal_node:
+            self.path.append(goal_node.idx)
+            goal_node = goal_node.prev
+        self.path.reverse()

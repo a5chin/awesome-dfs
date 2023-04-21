@@ -35,22 +35,19 @@ def test_1():
     dfs = DFS()
     nodes = init()
     dfs.search(nodes[0], nodes[1])
-    path = dfs.get_path()
 
-    assert path[-1] == 1
+    assert dfs.path[-1] == 1
 
 def test_2():
     dfs = DFS()
     nodes = init()
     dfs.search(nodes[5], nodes[9])
-    path = dfs.get_path()
 
-    assert path[-1] == 9
+    assert dfs.path[-1] == 9
 
 def test_3():
     dfs = DFS()
     nodes = init()
     dfs.search(nodes[4], nodes[1])
-    path = dfs.get_path()
 
-    assert path[-1] == 1
+    assert dfs.path[-1] == 1
