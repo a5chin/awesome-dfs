@@ -4,8 +4,7 @@ from pathlib import Path
 current_dir = Path(__file__).resolve().parent
 sys.path.append(current_dir.parent.as_posix())
 
-from node import Node
-from dfs import DFS
+from dfs import Node, DFS
 
 
 def init():
