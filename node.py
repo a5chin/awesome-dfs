@@ -3,6 +3,7 @@ class Node:
         self.idx = idx
         self.adjs = []
         self.seen = False
+        self.parent = None
 
     def __repr__(self) -> str:
         return f"(id: {self.idx}, adjs: {self.adjs}, seen: {self.seen})"

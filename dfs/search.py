@@ -1,6 +1,6 @@
 from typing import List
 
-from .node import Node
+from node import Node
 
 
 class DFS:
@@ -15,13 +15,20 @@ class DFS:
 
             if not current_node.seen:
                 current_node.seen = True
-                self.path.append(current_node.idx)
 
                 if current_node == goal_node:
+                    self.path = [current_node.idx]
+
+                    while current_node.parent:
+                        self.path.append(current_node.parent.idx)
+                        current_node = current_node.parent
+
+                    self.path.reverse()
                     break
 
                 for node in current_node.adjs:
                     if not node.seen:
+                        node.parent = current_node
                         stack.append(node)
 
     def get_path(self) -> List:
