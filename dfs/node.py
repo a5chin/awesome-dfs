@@ -6,4 +6,4 @@ class Node:
         self.prev = None
 
     def __repr__(self) -> str:
-        return f"Node(id: {self.idx}, adjs: {self.adjs}, seen: {self.seen})"
+        return f"Node(id={self.idx}, adjs={self.adjs}, seen={self.seen}, prev={self.prev})"
